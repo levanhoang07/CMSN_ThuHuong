@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday My Love 💙</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+    <!-- HEART RAIN ANIMATION -->
+    <div class="heart-rain"></div>
+
+    <!-- MUSIC -->
+    <audio id="bgMusic" loop>
+        <source src="media/vid.mp4" type="audio/mp3">
+    </audio>
+
+    <!-- VIDEO POPUP -->
+    <div id="videoPopup" class="video-popup hidden">
+        <div class="popup-content scale-in">
+            <span class="close-btn" onclick="closeVideo()">✖</span>
+            <video id="popupVideo" controls class="popup-video">
+                <source src="media/vid.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- INTRO SCREEN -->
+    <div id="intro" class="intro-container">
+
+        <div class="intro-stars"></div>
+
+        <div class="intro-heart floating">💙</div>
+
+        <div class="intro-title neon">
+            Happy Birthday  
+            <span>My Love</span>
+        </div>
+
+        <div class="intro-subtitle fade-in-late">
+    Hôm nay là ngày đặc biệt của Em 💙
+</div>
+
+        <button class="start-btn glow-big" onclick="startExperience()">
+            ✨ Chạm để bắt đầu ✨
+        </button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content" class="hidden">
+
+        <!-- LETTER SECTION -->
+        <section id="letter-section" class="section">
+            <h2 class="section-title underline">💌 Lời gửi đến Em 💌</h2>
+
+            <p class="section-desc">
+                Một món quà nhỏ xíu… nhưng chứa đầy yêu thương dành cho em 💙
+            </p>
+
+            <div class="envelope-container" onclick="openEnvelope()">
+                <div class="envelope-3d bounce" id="envelope">
+                    <div class="envelope-body">
+                        <div class="envelope-flap"></div>
+                        <div class="letter-paper">
+                            <div class="letter-heart">💕</div>
+                            <div class="letter-text">
+                                <strong>Em yêu của anh,</strong><br><br>
+                                Em là món quà tuyệt vời nhất của cuộc đời anh.<br>
+                                Chúc em một ngày sinh nhật ngọt ngào,<br>
+                                tràn ngập hạnh phúc và những điều đẹp nhất.<br>
+                                Chúc em đắc tài, đắc lộc, đắc bình an.<br><br>
+                                <em>Mãi yêu em,</em><br>
+                                <strong>Anh 💙</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="click-instruction pulse" id="clickInst">
+                    👆 Chạm để mở thư 👆
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTO GALLERY -->
+        <section id="gallery-section" class="section">
+            <h2 class="section-title underline">💙 Những Khoảnh Khắc Của Chúng Ta 💙</h2>
+
+            <p class="section-desc">Những kỷ niệm đẹp nhất… đều có em ở trong đó 💙</p>
+
+            <div class="gallery-3d">
+                <div class="gallery-track">
+                    <div class="photo-card pop"><img src="images/1.jpg"></div>
+                    <div class="photo-card pop"><img src="images/2.jpg"></div>
+                    <div class="photo-card pop"><img src="images/3.jpg"></div>
+                    <div class="photo-card pop"><img src="images/4.jpg"></div>
+                    <div class="photo-card pop"><img src="images/44.jpg"></div>
+                    <div class="photo-card pop"><img src="images/6.jpg"></div>
+                    <div class="photo-card pop"><img src="images/7.jpg"></div>
+                    <div class="photo-card pop"><img src="images/8.jpg"></div>
+                    <div class="photo-card pop"><img src="images/9.jpg"></div>
+                    <div class="photo-card pop"><img src="images/10.jpg"></div>
+                    <div class="photo-card pop"><img src="images/11.jpg"></div>
+                    <div class="photo-card pop"><img src="images/12.jpg"></div>
+                    <div class="photo-card pop"><img src="images/13.jpg"></div>
+                    <div class="photo-card pop"><img src="images/14.jpg"></div>
+                    <div class="photo-card pop"><img src="images/144.jpg"></div>
+                    <div class="photo-card pop"><img src="images/16.jpg"></div>
+                    <div class="photo-card pop"><img src="images/17.jpg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO BUTTON -->
+        <section id="video-section" class="section">
+            <h2 class="section-title underline">🎬 Một Điều Đặc Biệt</h2>
+
+            <p class="section-desc">
+                Anh có điều này muốn gửi cho em…
+            </p>
+
+            <button class="video-btn glow-big" onclick="openVideo()">
+                🎬 Xem Video 🎬
+            </button>
+        </section>
+
+        <!-- GIFT BOX -->
+        <section id="gift-section" class="section">
+            <h2 class="section-title underline">🎁 Món Quà Dành Riêng Cho Em 🎁</h2>
+
+            <p class="section-desc">Bấm thử xem điều bất ngờ chờ em là gì nhé 💙</p>
+
+            <div class="gift-box wiggle" id="giftBox" onclick="openGift()">
+                <div class="box-lid"></div>
+                <div class="box-body"></div>
+                <div class="ribbon"></div>
+            </div>
+            <div class="gift-message fade-in" id="giftMessage">
+                🎉 Chúc Em Sinh Nhật Vui Vẻ 💙
+            </div>
+        </section>
+
+        <!-- FIREWORKS -->
+        <section id="fireworks-section" class="section fireworks-padding">
+            <canvas id="fireworksCanvas"></canvas>
+            <div class="final-message fade-in">
+                <h1 class="glow-text">You Are My Everything 💙</h1>
+            </div>
+        </section>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
