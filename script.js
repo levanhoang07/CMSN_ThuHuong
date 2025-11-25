@@ -31,21 +31,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const music = document.getElementById("bgMusic");
 
     window.startExperience = function () {
-        if (!intro || !main) return;
+    if (!intro || !main) return;
 
-        // Ẩn intro, hiện main-content
-        intro.classList.add("hidden");
-        main.classList.remove("hidden");
-        main.classList.add("show");
+    // Ẩn intro, hiện main-content
+    intro.classList.add("hidden");
+    main.classList.remove("hidden");
+    main.classList.add("show");
 
-        // Play nhạc nền
-        if (music) {
-            music.volume = 0.55;
-            music.play().catch(() => {
-                console.warn("Autoplay bị chặn – cần thao tác người dùng.");
+    // Play nhạc nền ngay lập tức trong onclick
+    if (music) {
+        music.volume = 0.55;
+        const playPromise = music.play();  // phát nhạc trực tiếp
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                // Trình duyệt chặn autoplay trên mobile nhưng vì đây là onclick nên hiếm khi xảy ra
+                console.warn("Nhạc không phát được, vui lòng chạm lại.");
             });
         }
-    };
+    }
+};
+
 
 
     /* ============================================================
